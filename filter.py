@@ -69,23 +69,6 @@ def convolve(image):
 import numpy as np
 
 def gaussian_filter(image, ksize=5, sigma=1.0):
-    """
-    Applies a Gaussian filter to an image.
-
-    Parameters:
-        image (numpy.ndarray): Input image (grayscale or color).
-        ksize (int): Kernel size (must be odd: 3,5,7,...).
-        sigma (float): Standard deviation of the Gaussian.
-
-    Returns:
-        numpy.ndarray: Blurred image.
-    """
-    # Ensure kernel size is odd
-    if ksize % 2 == 0:
-        raise ValueError("Kernel size must be odd")
-
     filtered = cv2.GaussianBlur(image, (ksize, ksize), sigma)
     return filtered
-
-import numpy as np
 
