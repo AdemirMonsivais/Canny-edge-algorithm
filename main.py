@@ -6,8 +6,8 @@ import canny_tools.sobeloperator as sobeloperator
 import canny_tools.edgesutils as edgesutils
 import canny_tools.filter as filter
 
-PATH = "/home/ade/proyectos/archivo_proyectos/canny/src/images/input/panda-rojo.png"
-
+input_path = "/home/ade/proyectos/archivo_proyectos/canny/src/images/input/panda-rojo.png"
+output_path = "/home/ade/proyectos/archivo_proyectos/canny/src/images/output/panda-rojo.png"
 img = cv.imread(PATH)
 img = utils.resize(img)
 
