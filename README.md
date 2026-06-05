@@ -21,7 +21,7 @@ Clone the repository:
 
 ```bash
 git clone https://github.com/AdemirMonsivais/Canny-edge-algorithm
-cd canny
+cd Canny-edge-algorithm
 ```
 
 Create a virtual environment:
@@ -35,7 +35,7 @@ Activate the virtual environment:
 ### Linux / macOS
 
 ```bash
-source .venv/bin/activate
+. .venv/bin/activate
 ```
 
 ### Windows (Command Prompt)
