@@ -6,7 +6,8 @@ import canny_tools.sobeloperator as sobeloperator
 import canny_tools.edgesutils as edgesutils
 import canny_tools.filter as filter
 
-input_image_path = "/home/ade/proyectos/archivo_proyectos/canny/src/images/input/"
+#Ajusta estas rutas de acuerdo a tus necesidades.
+input_image_path = "/home/ade/proyectos/archivo_proyectos/canny/src/images/input/" 
 output_image_path = "/home/ade/proyectos/archivo_proyectos/canny/src/images/output/"
 filename = "panda-rojo.png"
 
@@ -40,6 +41,8 @@ newimage = newimage.astype(np.uint8)
 newimage = sobeloperator.print_edges(gradient_magnitude, threshold)
 
 finalimage = edgesutils.sharp_edges(newimage)
+
+#saveimage = True para guardar la imagen a un lugar especificado por output_path con un nombre de archivo y extensión filename.
 utils.displayImage(finalimage, "Imagen Final", saveimage = True, output_path = output_image_path, filename = filename)
 
 
