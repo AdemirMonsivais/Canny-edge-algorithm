@@ -24,14 +24,14 @@ def grayscale(img):
 
     return gray.astype(np.uint8)
 
-def displayImage(image, winname = "image output", saveimage = False, nameoutput = ""):
+def displayImage(image, winname = "image output", saveimage = False, output_path = "", filename = ""):
     #image = image.astype(np.uint8)
     cv.imshow(winname, image)
     cv.waitKey(0)
     cv.destroyAllWindows()
 
-    if saveimage and not nameoutput == "":
-        cv.imwrite("src/images/output" + nameoutput, image)
+    if saveimage and not output_path == "" and not filename == "":
+        cv.imwrite(output_path + filename, image)
 
 def contrast(image):
     rows, columns = image.shape

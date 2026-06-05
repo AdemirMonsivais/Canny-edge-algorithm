@@ -6,9 +6,11 @@ import canny_tools.sobeloperator as sobeloperator
 import canny_tools.edgesutils as edgesutils
 import canny_tools.filter as filter
 
-input_path = "/home/ade/proyectos/archivo_proyectos/canny/src/images/input/panda-rojo.png"
-output_path = "/home/ade/proyectos/archivo_proyectos/canny/src/images/output/panda-rojo.png"
-img = cv.imread(PATH)
+input_image_path = "/home/ade/proyectos/archivo_proyectos/canny/src/images/input/"
+output_image_path = "/home/ade/proyectos/archivo_proyectos/canny/src/images/output/"
+filename = "panda-rojo.png"
+
+img = cv.imread(input_image_path + filename)
 img = utils.resize(img)
 
 utils.displayImage(img)
@@ -16,7 +18,7 @@ utils.displayImage(img)
 grayimage = utils.grayscale(img)
 filteredimage = filter.gaussian_filter(grayimage,ksize = 7, sigma = 2)
 
-utils.displayImage(filteredimage, "Imagen filtrada usango un filtro Gaussiano", True, "imagenfiltradas.jpeg")
+utils.displayImage(filteredimage, "Imagen filtrada usango un filtro Gaussiano")
 
 gradient_magnitude, gradient_orientation = sobeloperator.get_gradient_features(filteredimage)
 
@@ -38,7 +40,7 @@ newimage = newimage.astype(np.uint8)
 newimage = sobeloperator.print_edges(gradient_magnitude, threshold)
 
 finalimage = edgesutils.sharp_edges(newimage)
-utils.displayImage(finalimage, "Imagen Final")
+utils.displayImage(finalimage, "Imagen Final", saveimage = True, output_path = output_image_path, filename = filename)
 
 
 #utils.displayImage(newimage, "Imagen después de aplicar el detector de bordes Sobel")
